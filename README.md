@@ -34,7 +34,7 @@
    ```bash
    npm start
    ```
-3. The website should be app and running with the "Add product" functionality working
+3. The website should be up and running with the "Add product" functionality working
 
   ![Website](Website.png)
 
