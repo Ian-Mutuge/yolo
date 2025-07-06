@@ -20,6 +20,18 @@ services:
    DBNAME : yolomy
   depends_on:
    - mongodb
+  # Running the backend container 
+ ip2image:
+   build: backend
+   ports:
+    - 5000:5000
+   environment:
+    PORT: 3000
+    MONGODB_URI : mongodb://mongodb
+    DBNAME : yolomy
+   depends_on:
+   - mongodb
+
   # Creating the network for communication
 networks:
  mongo-net:
