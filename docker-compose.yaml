@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 services:
 # Creating the Mongodb service for the backend
  mongodb:
@@ -9,8 +9,17 @@ services:
   command:
   ports:
    - 27017:27017
-
-
+  # Running the frontend container
+ ip2frontend:
+  build: client
+  ports:
+   - 3000:3000
+  environment:
+   PORT: 3000
+   MONGODB_URI : mongodb://mongodb
+   DBNAME : yolomy
+  depends_on:
+   - mongodb
   # Creating the network for communication
 networks:
  mongo-net:
