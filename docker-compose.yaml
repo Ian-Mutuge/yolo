@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+# Creating the Mongodb service for the backend
+ mongodb:
+  image: mongo:latest
+  container_name: mongodb_container
+  networks:
+   - mongo-net
+  command:
+  ports:
+   - 27017:27017
+
+
+  # Creating the network for communication
+networks:
+ mongo-net:
+  name: mongo-net
+  driver: bridge
