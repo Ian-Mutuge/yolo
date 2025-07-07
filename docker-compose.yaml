@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-# Creating the Mongodb service for the backend
+# Creating the Mongodb service for the database
  mongodb:
   image: mongo:latest
   container_name: mongodb_container
