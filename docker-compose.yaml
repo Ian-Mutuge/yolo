@@ -4,36 +4,44 @@ services:
  mongodb:
   image: mongo:latest
   container_name: mongodb_container
+  restart: always
   networks:
    - mongo-net
-  command:
   ports:
    - 27017:27017
+  volumes:
+   - mongo-data:/data/db # Persist MongoDB data
+   - mongo-config:/data/configdb # Persist MongoDB configuration
   # Running the frontend container
  ip2frontend:
   build: client
   ports:
    - 3000:3000
-  environment:
-   PORT: 3000
-   MONGODB_URI : mongodb://mongodb
-   DBNAME : yolomy
+  networks:
+   - mongo-net
   depends_on:
    - mongodb
+
   # Running the backend container 
  ip2image:
    build: backend
    ports:
     - 5000:5000
    environment:
-    PORT: 3000
-    MONGODB_URI : mongodb://mongodb
+    PORT: 5000
+    MONGODB_URI : mongodb://mongodb:27017/yolomy
     DBNAME : yolomy
-   depends_on:
-   - mongodb
-
+   networks:
+   - mongo-net
+ 
   # Creating the network for communication
 networks:
  mongo-net:
   name: mongo-net
   driver: bridge
+  # Creating the volumes for data persistence
+volumes:
+   mongo-data:
+    driver: local
+   mongo-config:
+    driver: local
