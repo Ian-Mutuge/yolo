@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+build
+.dockerignore
+**/node_modules
+**Dockerfile
+Dockerfile*
+.git
+.gitignore
+dist/**
+README.md
+.vscode
+mongo-data
+mongo-data/
+mongo-config
+mongo-config/

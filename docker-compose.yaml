@@ -3,6 +3,7 @@ services:
 # Creating the Mongodb service for the database
  mongodb:
   image: mongo:latest
+  mem_limit: 512m # Limiting MongoDB resource usage within docker compose
   container_name: mongodb_container
   restart: always
   networks:
