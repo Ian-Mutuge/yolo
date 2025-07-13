@@ -85,6 +85,36 @@
     ```bash
    docker-compose ps
    ```
+5. Data persistence of the data volumes can also be verified by adding more products to the "Add products" section of the website
+   ![Persistence](Persistence.png)
+# Pushing the images to Dockerhub
+1. Navigate to the frontend and push the image to dockerhub
+   ```bash
+   cd client
+   ```
+   ```bash
+   docker build -t mvtuge745/yolo-ip2frontend:1.0.0 .
+   ```
+   ```bash
+   docker push mvtuge745/yolo-ip2frontend:1.0.0
+   ```
+2. Navigate to the backend and the same
+   ```bash
+   cd backend
+   ```
+   ```bash
+   docker build -t mvtuge745/yolo-ip2image:1.0.0 .
+   ```
+   ```bash
+   docker push mvtuge745/yolo-ip2image:1.0.0
+   ```
+3. Login to Dockerhub to verify tha the images have been pushed
+
+   ![Dockerhub](Dockerhub.png)
+4. The final image sizes (combined 399MB)can be obtained using the grep command - adjust by replacing mvtuge745 with the name of the repo
+    ```bash
+   docker images|grep mvtuge745/*
+   ```
 
 
 
