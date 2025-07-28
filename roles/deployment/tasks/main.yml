@@ -1,0 +1,19 @@
+---
+# tasks file for deployment
+- name: Show directory
+  debug:
+    msg: "{{ playbook_dir }}"
+
+- name: Basic deploy of a service
+  community.general.terraform:
+    project_path: "{{ playbook_dir }}"
+    state: present
+    force_init: true
+  delegate_to: localhost
+  become: false 
+  register: tf_result
+
+
+- name: tf outputs
+  debug:
+    var: tf_result.outputs

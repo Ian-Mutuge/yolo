@@ -9,3 +9,4 @@ vault.yml
 .vscode/*.json
 .json
 terraform.tfstate.backup
+*.tfstate.backup
