@@ -8,3 +8,4 @@ vault.yml
 .vscode/*
 .vscode/*.json
 .json
+terraform.tfstate.backup
