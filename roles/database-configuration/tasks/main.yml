@@ -1,0 +1,11 @@
+---
+# tasks file for database-configuration
+   - name: Run MongoDB container
+     docker_container:
+       name: mongo_container
+       image: mongo:latest
+       restart_policy: always
+       networks:
+         - name: ansinet
+       volumes:
+         - mongodb:/data/db

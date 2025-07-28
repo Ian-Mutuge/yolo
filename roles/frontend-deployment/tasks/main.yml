@@ -1,0 +1,50 @@
+---
+# tasks file for frontend-deployment
+   - name: Test connectivity to the server
+     ping:
+
+   - name: Update server
+     apt:
+       update_cache: yes
+
+   - name: Install git
+     apt:
+       name: git
+       state: present
+
+   - name: Clone repository
+     git:
+       repo: https://github.com/Ian-Mutuge/yolo.git
+       dest: ip3/
+
+   - name: Install Docker
+     apt:
+       name: docker.io
+       state: present
+
+   - name: Create Docker network
+     docker_network:
+       name: ansinet 
+       driver: bridge
+
+   - name: Create a Docker volume
+     docker_volume:
+       name: mongodb
+
+   
+   - name: Build frontend image
+     docker_image: 
+       name: yolo_frontend
+       source: build
+       build:
+         path: "ip3/client"
+  
+   - name: Run frontend container
+     docker_container:
+       name: yolo_frontend
+       image: yolo_frontend
+       networks:
+         - name: ansinet
+       ports:
+         - "3000:3000"
+       restart_policy: always
