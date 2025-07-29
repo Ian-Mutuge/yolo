@@ -1,9 +1,9 @@
 ### IP 3 Configuration Management
 ## Stage 1: Ansible Instrumentation
 # Prerequisites
- Ansible [core 2.17.12]
- Terraform v1.12.2
- Vagrant 2.4.7
+ - Ansible [core 2.17.12]
+ - Terraform v1.12.2
+ - Vagrant 2.4.7
  # Steps
 1. Setting up the environment by provisioning a vagrant virtual machine with the latest ubuntu server.
     - Initialise vagrant inside you inveronment by navigating to the project root folder and running the vagrant init command
