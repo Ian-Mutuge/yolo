@@ -6,7 +6,7 @@
  - Vagrant 2.4.7
  # Steps
 1. Setting up the environment by provisioning a vagrant virtual machine with the latest ubuntu server.
-    - Initialise vagrant inside you inveronment by navigating to the project root folder and running the vagrant init command
+    - Initialise vagrant inside your environment by navigating to the project root folder and running the vagrant init command
    ```bash
    vagrant init
    ```
