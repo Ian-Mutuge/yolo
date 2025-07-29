@@ -63,7 +63,7 @@
    ansible-galaxy init database-configuration
    ```  
    - Configure each of the roles to run the frontend, database and backend respectively and call these roles from the main playbook for a more modular design
-   ![playbook](playbook.png)
+   
    
 6. Run the command vagrant ssh-config to obtain the ansible user and path to the private key file which are added to the ansible.cfg file
     ```bash
@@ -82,7 +82,7 @@
    ```
 9. You should be able to see the added product on the browser
 
-   ![ansible](Ansiblerun.png)
+ 
    ## Stage 2: Ansible and Terraform Instrumentation
 10. In the same directory checkout into a branch named "Stage_two". Create a new directory in the stage-1-Ansible-root folder and name it after the branch you just checked into.
      ```bash
@@ -99,7 +99,7 @@
       terraform apply
    ```
     
-   ![Terraform](Terraform.png)
+ 
 12. Ansible YAML playbook should trigger both the resources provision using Terraform as well as the server configuration using Ansible roles playbooks.
   - Navigate to the root of the playbook and add a role that triggers the provisioning of the application using terraform as well running of the application
    ```bash
@@ -109,4 +109,4 @@
    ```bash
    vagrant up --provision
    ```
-   ![Final](Final.png)
+  
