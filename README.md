@@ -65,22 +65,23 @@
    - Configure each of the roles to run the frontend, database and backend respectively and call these roles from the main playbook for a more modular design
    ![playbook](playbook.png)
    
-   6. Run the command vagrant ssh-config to obtain the ansible user and path to the private key file which are added to the ansible.cfg file
+6. Run the command vagrant ssh-config to obtain the ansible user and path to the private key file which are added to the ansible.cfg file
     ```bash
    vagrant ssh-config
    ```
-   7. Start and provision the server to run the application
+7. Start and provision the server to run the application
    ```bash
    vagrant up --provision
    ```
-   8. Navigate to the frontend on your browser and test the "Add product" funtionality. Test persistence of the data by halting and restarting the VM and navigating to the browser
+8. Navigate to the frontend on your browser and test the "Add product" funtionality. Test persistence of the data by halting and restarting the VM and   navigating to the browser
     ```bash
    vagrant halt
    ```
     ```bash
    vagrant up --provision
    ```
-   9. You should be able to see the added product on the browser
+9. You should be able to see the added product on the browser
+
    ![ansible](Ansiblerun.png)
    ## Stage 2: Ansible and Terraform Instrumentation
    1. In the same directory checkout into a branch named "Stage_two". Create a new directory in the stage-1-Ansible-root folder and name it after the branch you just checked into.
