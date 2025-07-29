@@ -84,4 +84,11 @@
 
    ![ansible](Ansiblerun.png)
    ## Stage 2: Ansible and Terraform Instrumentation
-   1. In the same directory checkout into a branch named "Stage_two". Create a new directory in the stage-1-Ansible-root folder and name it after the branch you just checked into.
+1. In the same directory checkout into a branch named "Stage_two". Create a new directory in the stage-1-Ansible-root folder and name it after the branch you just checked into.
+     ```bash
+      git checkout -b Stage_two
+   ```
+    ```bash
+      mkdir Stage_two
+   ```
+     
