@@ -30,3 +30,12 @@ Embedding Ansible into the Vagrant provisioning process automates initial setup 
 config.vm.provision "ansible" do |ansible|
   ansible.playbook = "playbook.yml"
 end
+```
+To test persistence ot the docker volumes, one can add a product with the "Add product" functionality and stop the VM using vagrant halt. You should be able to see the product using the vagrant up --provision command.
+```bash
+vagrant halt
+```
+```bash
+vagrant up --provision
+```
+
