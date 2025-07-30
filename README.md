@@ -88,9 +88,9 @@
      ```bash
       git checkout -b Stage_two
    ```
-    ```bash
       mkdir Stage_two
    ```
+   
 11. Create Terraform scripts to provision the application
   - Navigate to the terraform file and add the code to provision the application on the vagrant virtual machine then run:
    ```bash
