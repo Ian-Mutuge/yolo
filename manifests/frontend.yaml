@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: us-central1-docker.pkg.dev/inlaid-contact-466616-g2/ip4repo/ipfrontend:1.0.0
+        ports:
+        - containerPort: 3000

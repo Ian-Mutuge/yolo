@@ -1,32 +1,27 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mystatefulset
+  name: mongo
 spec:
   selector:
     matchLabels:
-      app: myapp
-  serviceName: <ServiceName>
-  replicas: 2
+      app: mongo
+  serviceName: mongo
+  replicas: 3
   template:
     metadata:
       labels:
-        app: myapp
+        app: mongo
     spec:
       containers:
-      - name: myapp
-        image: registry.k8s.io/nginx-slim:0.8
-        ports:
-        - containerPort: 80
-          name: web
-        volumeMounts:
-        - name: www
-          mountPath: /usr/share/nginx/html
+      - name: mongo
+        image: us-central1-docker.pkg.dev/inlaid-contact-466616-g2/ip4repo/mongo:1.0.0
   volumeClaimTemplates:
   - metadata:
-      name: www
+      name: mongo-data
     spec:
-      accessModes: [ "ReadWriteOnce" ]
+      accessModes: [ "ReadWriteMany" ]
+      storageclassName: sc
       resources:
         requests:
-          storage: 1Gi
+          storage: 5Gi
