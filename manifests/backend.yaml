@@ -14,5 +14,23 @@ spec:
       containers:
       - name: backend
         image: us-central1-docker.pkg.dev/inlaid-contact-466616-g2/ip4repo/ip2backend:1.0.0
+        command: ["node","server.js"]
         ports:
         - containerPort: 5000
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://mongo:27017/yolomy"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: backend
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+    nodePort: 30100

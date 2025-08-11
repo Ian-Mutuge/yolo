@@ -14,5 +14,26 @@ spec:
       containers:
       - name: frontend
         image: us-central1-docker.pkg.dev/inlaid-contact-466616-g2/ip4repo/ipfrontend:1.0.0
+        command: ["npm","start"]
         ports:
-        - containerPort: 3000
+        - name: http
+          containerPort: 3000
+        env:
+            # This URL will be used by the frontend to call backend
+        - name: REACT_APP_API_URL
+          value: "http://34.63.147.110:5000"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: frontend
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+
