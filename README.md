@@ -1,4 +1,4 @@
-## IP 4 Orchestration with Kubernetes (IP: 34.67.251.211)
+## IP 4 Orchestration with Kubernetes ([External IP Address](http://34.67.251.211))
  1. Create a kubernetes cluster on GKE.
  2. Setup Connection to created GKE cluster in with your local machine or cloud shell.
     ```bash
