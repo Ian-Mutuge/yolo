@@ -1,15 +1,15 @@
 ## IP 4 Orchestration with Kubernetes ([External IP Address](http://34.67.251.211))
  1. Create a kubernetes cluster on GKE.
- 2. Setup Connection to created GKE cluster in with your local machine or cloud shell.
-    ```bash
-    gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
-   
- 3. Retag the Docker images for the frontend and backend
-
- 4. Install Google CLI
+ 2. Install Google CLI
     ```bash
     sudo apt-get update && sudo apt-get install google-cloud-cli
     ```
+ 3. Setup Connection to created GKE cluster in with your local machine or cloud shell.
+    ```bash
+    gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
+   
+ 4. Retag the Docker images for the frontend and backend
+
  5. Authenticate to GCR
     ```bash
       gcloud auth configure-docker us-central1-docker.pkg.dev
